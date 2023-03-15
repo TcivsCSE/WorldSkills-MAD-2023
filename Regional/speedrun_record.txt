@@ -1,0 +1,29 @@
+------ 1st Speedrun ------
+Jetpack Compose : 03:45:46
+Flutter         : 01:23:32
+Abobe XD        : N/A
+
+------ 2nd Speedrun ------
+Jetpack Compose : 02:10:32
+Flutter         : 00:53:41
+Abobe XD        : N/A
+
+------ 3rd Speedrun ------
+Jetpack Compose : 01:50:10
+Flutter         : 00:43:27
+Abobe XD        : N/A
+
+------ 4th Speedrun ------
+Jetpack Compose : 01:30:07
+Flutter         : 00:43:29
+Abobe XD        : N/A
+
+------ 5th Speedrun ------
+Jetpack Compose : N/A
+Flutter         : N/A
+Abobe XD        : N/A
+
+------ 6th Speedrun ------
+Jetpack Compose : N/A
+Flutter         : N/A
+Abobe XD        : N/A
