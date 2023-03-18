@@ -83,8 +83,8 @@
 // 				)
 // 			).setScale(4, RoundingMode.HALF_UP)
 // 		);
-		
 // 		sc.close();
+
 // 	}
 // }
 
@@ -213,10 +213,10 @@
 // import java.util.List;
 
 // public class JPD01 {
-
 // 	public static void main(String[] args) {
 // 		Scanner sc = new Scanner(System.in);
 // 		String[] inputList = {sc.nextLine(), sc.nextLine(), sc.nextLine()};
+
 // 		List<Integer> moneys = Arrays.stream(inputList)
 // 			.map(s -> {
 // 				try {
@@ -227,8 +227,9 @@
 // 			})
 // 			.map(i -> i < 0 ? 0 : i)
 // 			.collect(Collectors.toList());
+
 // 		int total = moneys.get(0) + (moneys.get(1) * 5) + (moneys.get(2) * 10);
 // 		System.out.println(new DecimalFormat("#,###").format(total));
 // 		sc.close();
 // 	}
-}
+// }
