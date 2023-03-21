@@ -15,7 +15,7 @@ Jetpack Compose : 01:30:07
 Flutter         : 00:43:29
 
 ------ 5th Speedrun ------
-Jetpack Compose : N/A
+Jetpack Compose : 01:39:57
 Flutter         : 00:49:56
 
 ------ 6th Speedrun ------
