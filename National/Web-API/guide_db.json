@@ -1,0 +1,19 @@
+{
+  "test1@gmail.com": {
+    "id": "ed818ba8-7c41-4c6b-9130-3e4e02b755e6",
+    "email": "test1@gmail.com",
+    "password": "somepassword",
+    "name": "小明",
+    "posts": {},
+    "tickets": {
+      "06a5f6ac-4c14-4784-a75f-f5e8ea89bbf7": {
+        "id": "06a5f6ac-4c14-4784-a75f-f5e8ea89bbf7",
+        "name": "test",
+        "price": 9999,
+        "purchased_at": 1685427228,
+        "expired_at": "2023-05-30T12-07",
+        "type": "成人票"
+      }
+    }
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "accounts": {
+    "test1@gmail.com": {
+      "id": "618a5cf6-d161-4636-88e7-d790d4ed1f12",
+      "email": "test1@gmail.com",
+      "password": "somepassword",
+      "nickname": "小明",
+      "posts": {
+        "6b995119-0e2d-4ebf-b0b5-2c6bd8841af1": [
+          "e7c683c3-8678-4664-a334-106cdd667ab3"
+        ]
+      },
+      "comments": {
+        "6b995119-0e2d-4ebf-b0b5-2c6bd8841af1": {
+          "e7c683c3-8678-4664-a334-106cdd667ab3": [
+            "00ac3206-e7db-4771-aab8-42a6b0196b79"
+          ]
+        }
+      },
+      "favorites": {
+        "6b995119-0e2d-4ebf-b0b5-2c6bd8841af1": [
+          "e7c683c3-8678-4664-a334-106cdd667ab3"
+        ]
+      }
+    }
+  },
+  "discussions": {
+    "289ed4a8-b96f-4fe1-848a-7277c1158928": {
+      "id": "289ed4a8-b96f-4fe1-848a-7277c1158928",
+      "name": "test0",
+      "posts": {}
+    },
+    "951d13e3-2497-42e8-a469-338a674b58f7": {
+      "id": "951d13e3-2497-42e8-a469-338a674b58f7",
+      "name": "test1",
+      "posts": {}
+    },
+    "f4ee70af-b01f-4dda-8715-0a2bf061c067": {
+      "id": "f4ee70af-b01f-4dda-8715-0a2bf061c067",
+      "name": "test2",
+      "posts": {}
+    },
+    "6b995119-0e2d-4ebf-b0b5-2c6bd8841af1": {
+      "id": "6b995119-0e2d-4ebf-b0b5-2c6bd8841af1",
+      "name": "test3",
+      "posts": {
+        "e7c683c3-8678-4664-a334-106cdd667ab3": {
+          "id": "e7c683c3-8678-4664-a334-106cdd667ab3",
+          "author_id": "618a5cf6-d161-4636-88e7-d790d4ed1f12",
+          "created_at": 1685425931,
+          "title": "test1",
+          "content": "asdasdasdad",
+          "comments": {
+            "00ac3206-e7db-4771-aab8-42a6b0196b79": {
+              "id": "00ac3206-e7db-4771-aab8-42a6b0196b79",
+              "author_id": "618a5cf6-d161-4636-88e7-d790d4ed1f12",
+              "created_at": 1685426520,
+              "content": "asdasdasdad"
+            }
+          }
+        }
+      }
+    },
+    "7b0f7edd-68cc-4daf-9844-5a09452491e4": {
+      "id": "7b0f7edd-68cc-4daf-9844-5a09452491e4",
+      "name": "test4",
+      "posts": {}
+    }
+  }
+}
