@@ -4,7 +4,7 @@
       "id": "618a5cf6-d161-4636-88e7-d790d4ed1f12",
       "email": "test1@gmail.com",
       "password": "somepassword",
-      "nickname": "小明",
+      "nickname": "小玉",
       "posts": {
         "6b995119-0e2d-4ebf-b0b5-2c6bd8841af1": [
           "e7c683c3-8678-4664-a334-106cdd667ab3"
@@ -22,6 +22,15 @@
           "e7c683c3-8678-4664-a334-106cdd667ab3"
         ]
       }
+    },
+    "test0@gmail.com": {
+      "id": "b49b8e59-3cf1-4d94-a33d-297d7b2c751f",
+      "email": "test0@gmail.com",
+      "password": "somepassword",
+      "nickname": "小明2",
+      "posts": {},
+      "comments": {},
+      "favorites": {}
     }
   },
   "discussions": {

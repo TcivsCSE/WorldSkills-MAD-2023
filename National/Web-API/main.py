@@ -6,11 +6,6 @@ from fastapi import FastAPI, Body, Request, Response, status
 app = FastAPI()
 
 
-@app.get("/")
-def root():
-  return {"Hello": "World"}
-
-
 @app.post("/guide/account/signup")
 def guide_account_signup(response: Response, payload: dict = Body(...)):
   with open("guide_db.json", "r", encoding = "utf-8") as f:
@@ -58,9 +53,26 @@ def guide_account_login(response: Response, payload: dict = Body(...)):
   return db_data[payload["email"]]
 
 @app.post("/guide/account/edit")
-def guide_account_edit():
-  # TODO: Impl info editing
-  return {}
+def guide_account_edit(response: Response, payload: dict = Body(...)):
+  with open("guide_db.json", "r", encoding = "utf-8") as f:
+    db_data = json.load(f)
+  
+  if "email" not in payload or "password" not in payload:
+    response.status_code = status.HTTP_400_BAD_REQUEST
+    return {"err": "Account info missing."}
+    
+  if payload["email"] not in db_data:
+    response.status_code = status.HTTP_404_NOT_FOUND
+    return {"err": "Account not found."}
+  
+  for k, v in payload["data"].items():
+    db_data[payload["email"]][k] = v
+  
+  with open("guide_db.json", "w", encoding = "utf-8") as f:
+    json.dump(db_data, f, indent = 2, ensure_ascii = False)
+  
+  response.status_code = status.HTTP_202_ACCEPTED
+  return db_data[payload["email"]]
 
 @app.get("/guide/news/posts")
 @app.post("/guide/news/posts")
@@ -197,9 +209,26 @@ def forum_account_login(response: Response, payload: dict = Body(...)):
   return db_data["accounts"][payload["email"]]
 
 @app.post("/forum/account/edit")
-def forum_account_edit():
-  # TODO: Impl info editing
-  return {}
+def forum_account_edit(response: Response, payload: dict = Body(...)):
+  with open("forum_db.json", "r", encoding = "utf-8") as f:
+    db_data = json.load(f)
+    
+  if "email" not in payload or "password" not in payload:
+    response.status_code = status.HTTP_400_BAD_REQUEST
+    return {"err": "Account info missing."}
+    
+  if payload["email"] not in db_data["accounts"]:
+    response.status_code = status.HTTP_404_NOT_FOUND
+    return {"err": "Account not found."}
+  
+  for k, v in payload["data"].items():
+    db_data["accounts"][payload["email"]][k] = v
+  
+  with open("forum_db.json", "w", encoding = "utf-8") as f:
+    json.dump(db_data, f, indent = 2, ensure_ascii = False)
+  
+  response.status_code = status.HTTP_202_ACCEPTED
+  return db_data["accounts"][payload["email"]]
 
 @app.get("/forum/discussions")
 def forum_discussions():
