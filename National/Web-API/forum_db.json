@@ -18,9 +18,8 @@
         }
       },
       "favorites": {
-        "6b995119-0e2d-4ebf-b0b5-2c6bd8841af1": [
-          "e7c683c3-8678-4664-a334-106cdd667ab3"
-        ]
+        "discussions": [],
+        "posts": []
       }
     },
     "test0@gmail.com": {
@@ -30,28 +29,157 @@
       "nickname": "小明2",
       "posts": {},
       "comments": {},
-      "favorites": {}
+      "favorites": {
+        "discussions": [],
+        "posts": []
+      }
+    },
+    "test3@gmail.com": {
+      "id": "b4c4980a-0ae7-4f5e-944d-4e17445fb883",
+      "email": "test3@gmail.com",
+      "password": "somepassword",
+      "nickname": "小明3",
+      "posts": {},
+      "comments": {},
+      "favorites": {
+        "discussions": [],
+        "posts": []
+      }
+    },
+    "dyhuang@gmail.com": {
+      "id": "b642b35a-3482-492b-8c42-cb8dd0b4fa4b",
+      "email": "dyhuang@gmail.com",
+      "password": "password123",
+      "nickname": "dyhuang",
+      "posts": {
+        "6b995119-0e2d-4ebf-b0b5-2c6bd8841af1": [
+          "3310032d-5326-4190-b047-22fc18486ab1",
+          "7fb2099f-b82e-4682-b1e6-d082815cfc79"
+        ],
+        "289ed4a8-b96f-4fe1-848a-7277c1158928": [
+          "1f2fc83d-738b-4ece-800e-ba162d8ade22"
+        ],
+        "f4ee70af-b01f-4dda-8715-0a2bf061c067": [
+          "dcbad150-6bd8-47f6-8ccc-d9dec1b97ec5"
+        ],
+        "951d13e3-2497-42e8-a469-338a674b58f7": [
+          "2090443b-0f8c-4ebc-a572-6c2137b81c32"
+        ]
+      },
+      "comments": {
+        "6b995119-0e2d-4ebf-b0b5-2c6bd8841af1": {
+          "e7c683c3-8678-4664-a334-106cdd667ab3": [
+            "71c0b98b-dd90-4ee1-84d7-083e4d4ff945",
+            "593edbba-f77c-4735-9660-de148144fe88",
+            "845335b3-6aee-45c8-b05e-898757b45ff3"
+          ]
+        }
+      },
+      "favorites": {
+        "discussions": [
+          "7b0f7edd-68cc-4daf-9844-5a09452491e4",
+          "951d13e3-2497-42e8-a469-338a674b58f7",
+          "f4ee70af-b01f-4dda-8715-0a2bf061c067"
+        ],
+        "posts": [
+          "f4ee70af-b01f-4dda-8715-0a2bf061c067",
+          "951d13e3-2497-42e8-a469-338a674b58f7",
+          "289ed4a8-b96f-4fe1-848a-7277c1158928",
+          "7b0f7edd-68cc-4daf-9844-5a09452491e4",
+          "3310032d-5326-4190-b047-22fc18486ab1",
+          "2090443b-0f8c-4ebc-a572-6c2137b81c32",
+          "dcbad150-6bd8-47f6-8ccc-d9dec1b97ec5"
+        ]
+      }
+    },
+    "wocao@gmail.com": {
+      "id": "32aeba0d-1726-4016-b903-4bbb9b4da79c",
+      "email": "wocao@gmail.com",
+      "password": "ilivechina",
+      "nickname": "WoCaoBuShiBa",
+      "posts": {},
+      "comments": {
+        "f4ee70af-b01f-4dda-8715-0a2bf061c067": {
+          "dcbad150-6bd8-47f6-8ccc-d9dec1b97ec5": [
+            "76585bef-706f-4b5a-a7f2-7d0d0e0a9310"
+          ]
+        },
+        "951d13e3-2497-42e8-a469-338a674b58f7": {
+          "2090443b-0f8c-4ebc-a572-6c2137b81c32": [
+            "e02991ff-645b-490f-a16f-5ee759b65bec"
+          ]
+        }
+      },
+      "favorites": {
+        "discussions": [
+          "951d13e3-2497-42e8-a469-338a674b58f7"
+        ],
+        "posts": [
+          "2090443b-0f8c-4ebc-a572-6c2137b81c32"
+        ]
+      }
     }
   },
   "discussions": {
     "289ed4a8-b96f-4fe1-848a-7277c1158928": {
       "id": "289ed4a8-b96f-4fe1-848a-7277c1158928",
-      "name": "test0",
-      "posts": {}
+      "name": "討論區1",
+      "posts": {
+        "1f2fc83d-738b-4ece-800e-ba162d8ade22": {
+          "id": "1f2fc83d-738b-4ece-800e-ba162d8ade22",
+          "author_id": "b642b35a-3482-492b-8c42-cb8dd0b4fa4b",
+          "created_at": 1685585124,
+          "title": "asdsadfkdnbhjknj",
+          "content": "kadsasdasdjmfnjdskf",
+          "comments": {}
+        }
+      }
     },
     "951d13e3-2497-42e8-a469-338a674b58f7": {
       "id": "951d13e3-2497-42e8-a469-338a674b58f7",
-      "name": "test1",
-      "posts": {}
+      "name": "討論區2",
+      "posts": {
+        "2090443b-0f8c-4ebc-a572-6c2137b81c32": {
+          "id": "2090443b-0f8c-4ebc-a572-6c2137b81c32",
+          "author_id": "b642b35a-3482-492b-8c42-cb8dd0b4fa4b",
+          "created_at": 1685610848,
+          "title": "吃ㄐㄐ",
+          "content": "吃ㄐㄐ, ㄐㄐ好吃",
+          "comments": {
+            "e02991ff-645b-490f-a16f-5ee759b65bec": {
+              "id": "e02991ff-645b-490f-a16f-5ee759b65bec",
+              "author_id": "32aeba0d-1726-4016-b903-4bbb9b4da79c",
+              "created_at": 1685676641,
+              "content": "吃ㄐㄐ"
+            }
+          }
+        }
+      }
     },
     "f4ee70af-b01f-4dda-8715-0a2bf061c067": {
       "id": "f4ee70af-b01f-4dda-8715-0a2bf061c067",
-      "name": "test2",
-      "posts": {}
+      "name": "討論區3",
+      "posts": {
+        "dcbad150-6bd8-47f6-8ccc-d9dec1b97ec5": {
+          "id": "dcbad150-6bd8-47f6-8ccc-d9dec1b97ec5",
+          "author_id": "b642b35a-3482-492b-8c42-cb8dd0b4fa4b",
+          "created_at": 1685586240,
+          "title": "test",
+          "content": "asdsadasdasdasdaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "comments": {
+            "76585bef-706f-4b5a-a7f2-7d0d0e0a9310": {
+              "id": "76585bef-706f-4b5a-a7f2-7d0d0e0a9310",
+              "author_id": "32aeba0d-1726-4016-b903-4bbb9b4da79c",
+              "created_at": 1685676471,
+              "content": "wocao newbe"
+            }
+          }
+        }
+      }
     },
     "6b995119-0e2d-4ebf-b0b5-2c6bd8841af1": {
       "id": "6b995119-0e2d-4ebf-b0b5-2c6bd8841af1",
-      "name": "test3",
+      "name": "討論區4",
       "posts": {
         "e7c683c3-8678-4664-a334-106cdd667ab3": {
           "id": "e7c683c3-8678-4664-a334-106cdd667ab3",
@@ -65,14 +193,48 @@
               "author_id": "618a5cf6-d161-4636-88e7-d790d4ed1f12",
               "created_at": 1685426520,
               "content": "asdasdasdad"
+            },
+            "71c0b98b-dd90-4ee1-84d7-083e4d4ff945": {
+              "id": "71c0b98b-dd90-4ee1-84d7-083e4d4ff945",
+              "author_id": "b642b35a-3482-492b-8c42-cb8dd0b4fa4b",
+              "created_at": 1685674446,
+              "content": "test  ssss"
+            },
+            "593edbba-f77c-4735-9660-de148144fe88": {
+              "id": "593edbba-f77c-4735-9660-de148144fe88",
+              "author_id": "b642b35a-3482-492b-8c42-cb8dd0b4fa4b",
+              "created_at": 1685674672,
+              "content": "aaddaadd"
+            },
+            "845335b3-6aee-45c8-b05e-898757b45ff3": {
+              "id": "845335b3-6aee-45c8-b05e-898757b45ff3",
+              "author_id": "b642b35a-3482-492b-8c42-cb8dd0b4fa4b",
+              "created_at": 1685675983,
+              "content": ":)"
             }
           }
+        },
+        "3310032d-5326-4190-b047-22fc18486ab1": {
+          "id": "3310032d-5326-4190-b047-22fc18486ab1",
+          "author_id": "b642b35a-3482-492b-8c42-cb8dd0b4fa4b",
+          "created_at": 1685585029,
+          "title": "asdsadfafdgfjkdnbhjknj",
+          "content": "kadsjmfnjdskf",
+          "comments": {}
+        },
+        "7fb2099f-b82e-4682-b1e6-d082815cfc79": {
+          "id": "7fb2099f-b82e-4682-b1e6-d082815cfc79",
+          "author_id": "b642b35a-3482-492b-8c42-cb8dd0b4fa4b",
+          "created_at": 1685585120,
+          "title": "asdsadfkdnbhjknj",
+          "content": "kadsasdasdjmfnjdskf",
+          "comments": {}
         }
       }
     },
     "7b0f7edd-68cc-4daf-9844-5a09452491e4": {
       "id": "7b0f7edd-68cc-4daf-9844-5a09452491e4",
-      "name": "test4",
+      "name": "討論區5",
       "posts": {}
     }
   }

@@ -46,7 +46,7 @@ def guide_account_login(response: Response, payload: dict = Body(...)):
   account_data = db_data[payload["email"]]
   
   if account_data["password"] != payload["password"]:
-    response.status_code = status.HTTP_403_FORBIDDEN
+    response.status_code = status.HTTP_401_UNAUTHORIZED
     return {"err": "Wrong password."}
   
   response.status_code = status.HTTP_200_OK
@@ -100,7 +100,7 @@ async def guide_news_posts(request: Request, response: Response):
     account_data = db_data[payload["email"]]
   
     if account_data["password"] != payload["password"]:
-      response.status_code = status.HTTP_403_FORBIDDEN
+      response.status_code = status.HTTP_401_UNAUTHORIZED
       return {"err": "Wrong password."}
   
     post_id = str(uuid.uuid4())
@@ -132,7 +132,7 @@ def guide_tickets(response: Response, payload: dict = Body(...)):
   account_data = db_data[payload["email"]]
 
   if account_data["password"] != payload["password"]:
-    response.status_code = status.HTTP_403_FORBIDDEN
+    response.status_code = status.HTTP_401_UNAUTHORIZED
     return {"err": "Wrong password."}
   
   if "data" not in payload:
@@ -177,7 +177,10 @@ def forum_account_signup(response: Response, payload: dict = Body(...)):
     "nickname": payload["nickname"],
     "posts": {},
     "comments": {},
-    "favorites": {}
+    "favorites": {
+      "discussions": [],
+      "posts": [],
+    }
   }
   
   with open("forum_db.json", "w", encoding = "utf-8") as f:
@@ -202,7 +205,7 @@ def forum_account_login(response: Response, payload: dict = Body(...)):
   account_data = db_data["accounts"][payload["email"]]
   
   if account_data["password"] != payload["password"]:
-    response.status_code = status.HTTP_403_FORBIDDEN
+    response.status_code = status.HTTP_401_UNAUTHORIZED
     return {"err": "Wrong password."}
   
   response.status_code = status.HTTP_200_OK
@@ -230,11 +233,28 @@ def forum_account_edit(response: Response, payload: dict = Body(...)):
   response.status_code = status.HTTP_202_ACCEPTED
   return db_data["accounts"][payload["email"]]
 
+@app.get("/forum/account/{user_id}")
+def forum_account_get_by_id(response: Response, user_id: str):
+  with open("forum_db.json", "r", encoding = "utf-8") as f:
+    db_data = json.load(f)
+  
+  target_user = list(filter(lambda x: x["id"] == user_id, db_data["accounts"].values()))
+  
+  if len(target_user) == 0:
+    response.status_code = status.HTTP_404_NOT_FOUND
+    return {"err": "Account not found."}
+  
+  target_user[0].pop("email")
+  target_user[0].pop("password")
+  target_user[0].pop("favorites")
+  
+  return target_user[0]
+
 @app.get("/forum/discussions")
 def forum_discussions():
   with open("forum_db.json", "r", encoding = "utf-8") as f:
     db_data = json.load(f)
-  return [d for d in db_data["discussions"]]
+  return db_data["discussions"]
 
 @app.get("/forum/discussions/{discussion_id}/posts")
 @app.post("/forum/discussions/{discussion_id}/posts")
@@ -264,7 +284,7 @@ async def forum_discussion_posts(request: Request, response: Response, discussio
     account_data = db_data["accounts"][payload["email"]]
     
     if account_data["password"] != payload["password"]:
-      response.status_code = status.HTTP_403_FORBIDDEN
+      response.status_code = status.HTTP_401_UNAUTHORIZED
       return {"err": "Wrong password."}
     
     post_id = str(uuid.uuid4())
@@ -333,7 +353,7 @@ async def forum_discussion_post_comment(request: Request, response: Response, di
     account_data = db_data["accounts"][payload["email"]]
     
     if account_data["password"] != payload["password"]:
-      response.status_code = status.HTTP_403_FORBIDDEN
+      response.status_code = status.HTTP_401_UNAUTHORIZED
       return {"err": "Wrong password."}
     
     comment_id = str(uuid.uuid4())
@@ -375,8 +395,8 @@ def forum_discussion_post(response: Response, discussion_id: str, post_id: str, 
     
   return db_data["discussions"][discussion_id]["posts"][post_id]["comments"][comment_id]
 
-@app.post("/forum/discussions/{discussion_id}/favorites")
-def forum_discussion_favorites(response: Response, discussion_id: str, payload: dict = Body(...)):
+@app.post("/forum/account/favorites")
+def forum_discussion_favorites(response: Response, payload: dict = Body(...)):
   with open("forum_db.json", "r", encoding = "utf-8") as f:
     db_data = json.load(f)
   
@@ -391,20 +411,29 @@ def forum_discussion_favorites(response: Response, discussion_id: str, payload: 
   account_data = db_data["accounts"][payload["email"]]
 
   if account_data["password"] != payload["password"]:
-    response.status_code = status.HTTP_403_FORBIDDEN
+    response.status_code = status.HTTP_401_UNAUTHORIZED
     return {"err": "Wrong password."}
   
   if "data" not in payload:
     response.status_code = status.HTTP_200_OK
     return account_data["favorites"]
   
-  if discussion_id not in db_data["accounts"][payload["email"]]["favorites"]:
-    db_data["accounts"][payload["email"]]["favorites"][discussion_id] = []
+  if payload["data"]["id"] not in db_data["accounts"][payload["email"]]["favorites"][payload["data"]["type"]]:
+      db_data["accounts"][payload["email"]]["favorites"][payload["data"]["type"]].append(payload["data"]["id"])
   
-  db_data["accounts"][payload["email"]]["favorites"][discussion_id].append(
-    payload["data"]["post_id"]
-  )
-  
+  if payload["data"]["is_remove"]:
+    try:
+      db_data["accounts"][payload["email"]]["favorites"][payload["data"]["type"]].remove(
+        payload["data"]["id"]
+      )
+    except:
+      pass
+  else:
+    if payload["data"]["id"] not in account_data["favorites"][payload["data"]["type"]]:
+      db_data["accounts"][payload["email"]]["favorites"][payload["data"]["type"]].append(
+        payload["data"]["id"]
+      )
+
   with open("forum_db.json", "w", encoding = "utf-8") as f:
     json.dump(db_data, f, indent = 2, ensure_ascii = False)
   
