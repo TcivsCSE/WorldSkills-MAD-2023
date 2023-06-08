@@ -15,5 +15,21 @@
         "type": "成人票"
       }
     }
+  },
+  "dyhuang@gmail.com": {
+    "id": "fef33a21-f98c-4426-a69b-e3e3d1fec859",
+    "email": "dyhuang@gmail.com",
+    "password": "password123",
+    "name": "dyhuang",
+    "posts": {},
+    "tickets": {}
+  },
+  "test2@gmail.com": {
+    "id": "53d0ca50-6c63-4198-965d-3d994de84c3f",
+    "email": "test2@gmail.com",
+    "password": "password456",
+    "name": "test2",
+    "posts": {},
+    "tickets": {}
   }
 }
