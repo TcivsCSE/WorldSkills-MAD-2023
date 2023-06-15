@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    <shortcut
+        android:shortcutId="newsShortcut"
+        android:enabled="true"
+        android:shortcutShortLabel="@string/news_shortcut_label">
+
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetPackage="dev.nightfeather.basic_build"
+            android:targetClass="dev.nightfeather.basic_build.MainActivity">
+
+            <extra android:name="shortcut_key" android:value="news" />
+        </intent>
+    </shortcut>
+    <shortcut
+        android:shortcutId="jobShortcut"
+        android:enabled="true"
+        android:shortcutShortLabel="@string/job_shortcut_label">
+
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetPackage="dev.nightfeather.basic_build"
+            android:targetClass="dev.nightfeather.basic_build.MainActivity">
+
+            <extra android:name="shortcut_key" android:value="job" />
+        </intent>
+    </shortcut>
+    <shortcut
+        android:shortcutId="ticketShortcut"
+        android:enabled="true"
+        android:shortcutShortLabel="@string/ticket_shortcut_label">
+
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetPackage="dev.nightfeather.basic_build"
+            android:targetClass="dev.nightfeather.basic_build.MainActivity">
+
+            <extra android:name="shortcut_key" android:value="ticket" />
+        </intent>
+    </shortcut>
+</shortcuts>

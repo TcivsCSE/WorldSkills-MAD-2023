@@ -210,7 +210,7 @@ object LoginPage {
     }
 
     @Composable
-    fun BuildTextField(
+    private fun BuildTextField(
         inputValue: MutableState<String>,
         iconVector: ImageVector,
         placeholder: String,
@@ -261,7 +261,7 @@ object LoginPage {
     }
 
     @Composable
-    fun BuildDialog(
+    private fun BuildDialog(
         iconVector: ImageVector,
         message: String,
         showDialog: MutableState<Boolean>

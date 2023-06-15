@@ -81,9 +81,10 @@ async def guide_news_posts(request: Request, response: Response):
     db_data = json.load(f)
   
   if request.method == "GET":
-    posts = []
+    posts = {}
     for user_account in db_data:
-      posts.extend(db_data[user_account]["posts"])
+      for v in db_data[user_account]["posts"].values():
+        posts[v["id"]] = v
     return posts
   
   if request.method == "POST":
@@ -144,7 +145,6 @@ def guide_tickets(response: Response, payload: dict = Body(...)):
   db_data[payload["email"]]["tickets"][ticket_id] = {
     "id": ticket_id,
     "name": payload["data"]["name"],
-    "price": payload["data"]["price"],
     "purchased_at": round(datetime.datetime.now().timestamp()),
     "expired_at": payload["data"]["expired_at"],
     "type": payload["data"]["type"]
