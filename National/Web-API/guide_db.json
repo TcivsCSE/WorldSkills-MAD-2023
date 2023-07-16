@@ -94,5 +94,13 @@
     "name": "test2",
     "posts": {},
     "tickets": {}
+  },
+  "testspr1@gmail.com": {
+    "id": "18fbd86d-91c7-4d7e-8bc4-6c07dd1b1884",
+    "email": "testspr1@gmail.com",
+    "password": "123456",
+    "name": "testspr1",
+    "posts": {},
+    "tickets": {}
   }
 }
