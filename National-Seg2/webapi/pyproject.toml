@@ -1,0 +1,13 @@
+
+[project]
+name = ""
+version = ""
+description = ""
+authors = [
+    {name = "NightFeather", email = "leolee50910@gmail.com"},
+]
+dependencies = [
+    "fastapi>=0.101.1",
+]
+requires-python = ">=3.9"
+license = {text = "MIT"}
