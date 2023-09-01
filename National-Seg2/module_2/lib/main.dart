@@ -7,7 +7,7 @@ import 'package:module_2/page/records.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
-  await SystemChrome.setEnabledSystemUIMode(SystemUiMode.leanBack);
+  await SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
   runApp(const MainApp());
 }
 
